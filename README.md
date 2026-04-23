@@ -5,6 +5,8 @@
 3. TSet은 칭호 획득을 사용하시면됩니다.
 4. 해당 칭호가 있어야 아이템을 사용할 수 있도록 만들어주세요.
 
+--- 
+
 ### 구조
 - BluePrint로 Data Table 작성, 이때 자료형은 FSItem (구조체)
   - Item 리스트를 Data Table로 작성을 한 이유는, 전체 아이템을 보기 편하고, csv로 export & import하여 관리하기 쉽기 떄문.
@@ -100,6 +102,8 @@ void UMenuHUD::ToggleTittle()
 }
 ```
 
+---
+
 ### 아이템 관리하는 인벤토리 (가방)
 - 아이템을 추가하는 경우, TArray에 사용하여 FSItem(아이템 구조체)들을 저장함.
 - ItemWidgetClass 를 Binding하여, UpdateWidget을 하는 경우 보유한 아이템에 맞춰 Widget을 최신화함. -> 인벤토리 UI에 아이템들이 표시됨.
@@ -157,6 +161,7 @@ void UInventory::UpdateWidget()
     }
 }
 ```
+--- 
 
 ### 아이템 정보 확인
 - NativeOnMouseEnter를 상속받아서, ItemWidget위에 마우스를 올릴 때, 해당 아이템의 Description이 표시되게 함.
@@ -203,6 +208,7 @@ void UItemWidget::NativeOnMouseLeave(const FPointerEvent& InMouseEvent)
     }
 }
 
+--- 
 
 ### 칭호 관리
 - PlayerData를 싱글톤으로 만듬.
@@ -236,6 +242,7 @@ public:
 현재 작성된 프로그램에서는 마땅히 칭호를 얻는 컨텐츠가 없기 떄문에,
 UMenuHUD에 버튼을 만들어 버튼을 누를 경우, '기사' 칭호를 지급함. 위 내용에 대한 코드는 '##구조' 쪽에 있음.
 
+---
 
 ### 칭호가 있어야 아이템 사용
 - 아이템 위젯 클릭시 아이템을 사용함. (사용했다고 Text를 출력함)
